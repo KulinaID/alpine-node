@@ -2,9 +2,13 @@ FROM alpine:3.2
 MAINTAINER Didiet Noor <dnoor@kulina.id> (@lynxluna)
 
 ENV TERM=dumb
-ENV VERSION=v5.3.0 NPM_VERSION=3
+ENV VERSION=v5.6.0 NPM_VERSION=3
 
 ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="g++ gcc libgcc libstdc++" RM_DIRS=/usr/include
+
+
+# Patch APK Mirror to YKode
+RUN echo "https://alpine.ykode.com/alpine/v3.2/main" > /etc/apk/repositories
 
 RUN apk add --update curl make gcc g++ binutils-gold python linux-headers paxctl libgcc libstdc++ && \
   curl -sSL https://nodejs.org/dist/${VERSION}/node-${VERSION}.tar.gz | tar -xz && \
