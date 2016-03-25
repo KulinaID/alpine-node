@@ -2,9 +2,9 @@ FROM alpine:3.2
 MAINTAINER Didiet Noor <dnoor@kulina.id> (@lynxluna)
 
 ENV TERM=dumb
-ENV VERSION=v5.6.0 NPM_VERSION=3
+ENV VERSION=v5.9.1 NPM_VERSION=3
 
-ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="g++ gcc libgcc libstdc++" RM_DIRS=/usr/include
+ENV CONFIG_FLAGS="--without-npm" DEL_PKGS="g++ gcc libgcc libstdc++" RM_DIRS=/usr/include
 
 
 # Patch APK Mirror to YKode
